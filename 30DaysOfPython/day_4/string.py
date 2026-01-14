@@ -27,3 +27,18 @@ print(company.upper())
 
 print("\nExercise 07:")
 print(company.lower())
+
+print("\nExercise 08:")
+text = "Coding For All"
+
+print("Capitalize : ",text.capitalize())
+print("Title : ",text.title())
+print("Swapcase : ",text.swapcase())
+
+print("\nExercise 09:")
+first_word = text.split(" ")[0]
+print(first_word)
+
+print("\nExercise 10:")
+print("Index using Find : ", text.find("Coding"))
+print("Index using Index : ",text.index("Coding"))
