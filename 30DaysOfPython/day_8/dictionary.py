@@ -40,3 +40,4 @@ student_list = student.items()
 print(student_list)
 
 del student["HTML"]
+del student
