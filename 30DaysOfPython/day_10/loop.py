@@ -275,3 +275,16 @@ for country in countries_list:
     for language in country["languages"]:
         languages.append(language)
 print(f"Total languages is {len(languages)}")
+
+print("\nMost spoken languages")
+language_count = {}
+
+for language in languages:
+  if language in language_count:
+    language_count[language] +=1
+  else:
+    language_count[language] = 1
+
+most_language = max(language_count, key=language_count.get)
+
+print(most_language)
