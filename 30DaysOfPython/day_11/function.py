@@ -1,4 +1,5 @@
 # Day 11: 30 Days of python programming
+from difflib import restore
 from ipaddress import summarize_address_range
 
 print("sum of two numbers")
@@ -52,3 +53,30 @@ def check_season(month: str):
 
 
 print(check_season(month="April"))
+
+print("\nCalculate slope")
+def calculate_slope(nb_a, nb_b):
+    y = nb_a * 0 + nb_b
+    x = int((- nb_b) / nb_a)
+    result = (x, y)
+
+    return result
+
+print(calculate_slope(2, -2))
+
+
+print("\nPrint list")
+def print_list(*args):
+    for i in args:
+        print(i)
+
+
+print_list(15 ,86 , 1, 23, 9, 41)
+
+print("\nInverse list")
+def reverse_list(list_name):
+
+    for i in range(len(list_name) -1, -1, -1):
+        print(list_name[i])
+
+reverse_list(["A", "B", "C"])
