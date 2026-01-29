@@ -128,9 +128,49 @@ print(list(country_six_character))
 
 print("\nFilter country start with E")
 
+
 def is_start_e(country_name):
     return country_name.startswith("E")
 
 
 country_start_e = filter(is_start_e, countries)
 print(list(country_start_e))
+
+print("\nChain list iterators")
+sum_numbers_filtered = reduce(
+    lambda x, y: x + y,
+    filter(
+        lambda x: x > 5,
+        map(
+            lambda x: x * 2,
+            numbers
+        )
+    )
+)
+
+print(sum_numbers_filtered)
+
+print("\nList string items")
+
+
+def get_string_lists(list_items):
+    result = filter(
+        lambda x: x.isalpha(),
+        list_items
+    )
+
+    return list(result)
+
+
+items = ["Rayan", "25", "Python", "178.0"]
+
+print(get_string_lists(items))
+
+
+print("\nJoin countries")
+europe_countries = reduce(
+    lambda x, y: x + ", " + y,
+    countries
+)
+
+print(europe_countries + " are north European countries")
