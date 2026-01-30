@@ -1,5 +1,8 @@
 # Day 14: 30 Days of python programming
 from functools import reduce
+from countries_list import countries as countries_list
+from countries_data import countries_data
+import string
 
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
@@ -166,7 +169,6 @@ items = ["Rayan", "25", "Python", "178.0"]
 
 print(get_string_lists(items))
 
-
 print("\nJoin countries")
 europe_countries = reduce(
     lambda x, y: x + ", " + y,
@@ -174,3 +176,46 @@ europe_countries = reduce(
 )
 
 print(europe_countries + " are north European countries")
+
+print("\nCount countries start with letter")
+
+
+def start_namee_countries():
+    characters = string.ascii_letters[:26]
+
+    countries_start_name = {}
+    for character in characters:
+        countries_start_name[character.upper()] = 0
+        for c in countries_list:
+            if c.startswith(character.upper()):
+                countries_start_name[character.upper()] += 1
+
+    return countries_start_name
+
+
+print(start_namee_countries())
+
+print("\nGet first ten countries")
+
+
+def get_first_ten_countries():
+    first_ten_countries = countries_list[:10]
+    return first_ten_countries
+
+
+print(get_first_ten_countries())
+
+print("\nGet last ten countries")
+
+
+def get_last_ten_countries():
+    last_ten_countries = countries_list[-10:]
+    return last_ten_countries
+
+
+print(get_last_ten_countries())
+
+print("\nSort countries data")
+
+sort_by_name = sorted(countries_data, key=lambda x: x["capital"])
+print(sort_by_name)
