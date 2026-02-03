@@ -20,3 +20,15 @@ print(match)
 print("\nReplace")
 match_replace = re.sub("Python", "Javascript", txt, re.I)
 print(match_replace)
+
+print("\nPattern")
+txt = '''Python is the most beautiful language that a human being has ever created.
+I recommend python for 12 a first programming language'''
+pattern = r"Python | python"
+matches = re.findall(pattern, txt)
+print(matches)
+
+print("\nMost frequent word")
+paragraph = """I love teaching. If you do not love teaching what else can you love. 
+I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love."""
+pattern = ""
