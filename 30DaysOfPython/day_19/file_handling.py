@@ -26,11 +26,22 @@ file_description('donald_speech.txt')
 # melina_trump_speech.txt
 file_description('melina_trump_speech.txt')
 
+def count_language(countries):
+    languages = []
+
+    language_count = {}
+
+    for country in countries:
+        for row in country["languages"]:
+            if row in language_count:
+                language_count.name = row
+                language_count.count = 1
+
+    return languages
+
 
 # countries_data.json
 with open('countries_data.json', 'r') as f:
     countries_json = json.loads(f.read())
 
-    countries = [country for country in countries_json]
-
-    print(type(countries))
+    print(count_language(countries_json))
