@@ -11,7 +11,7 @@ def file_description(file_name):
         words = " ".join(txt)
 
         print(f"Number of lines : {len(txt)}")
-        print(f"NUmber of words : {len(words.split())}\n")
+        print(f"Number of words : {len(words.split())}\n")
 
 
 # obama_speech.txt
@@ -26,22 +26,34 @@ file_description('donald_speech.txt')
 # melina_trump_speech.txt
 file_description('melina_trump_speech.txt')
 
-def count_language(countries):
-    languages = []
+print("Most spoken languages")
 
+
+# Most spoken languages
+def most_spoken_language(filename, limit):
     language_count = {}
 
-    for country in countries:
-        for row in country["languages"]:
-            if row in language_count:
-                language_count.name = row
-                language_count.count = 1
+    with open(filename, 'r') as f:
+        countries_json = json.loads(f.read())
 
-    return languages
+    for countries in countries_json:
+        for country in countries["languages"]:
+            if country.lower() in language_count:
+                language_count[country.lower()] += 1
+
+            else:
+                language_count[country.lower()] = 1
+
+    language_list = [(v, k.capitalize()) for k, v in language_count.items()]
+
+    language_list.sort(key=lambda x: x[0], reverse=True)
+    print(language_list[:limit])
 
 
-# countries_data.json
-with open('countries_data.json', 'r') as f:
-    countries_json = json.loads(f.read())
+most_spoken_language(filename='countries_data.json', limit=4)
 
-    print(count_language(countries_json))
+
+print("\nMost populated countries")
+# Most populated countries
+def most_populated_country(filename, limit):
+    pass
