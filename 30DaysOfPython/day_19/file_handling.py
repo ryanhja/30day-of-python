@@ -52,8 +52,9 @@ def most_spoken_language(filename, limit):
 
 most_spoken_language(filename='countries_data.json', limit=4)
 
-
 print("\nMost populated countries")
+
+
 # Most populated countries
 def most_populated_country(filename, limit):
     with open(filename) as f:
@@ -64,4 +65,23 @@ def most_populated_country(filename, limit):
 
     print(countries[:limit])
 
+
 most_populated_country(filename='countries_data.json', limit=4)
+
+print("\nIncoming email addresses")
+
+
+def extract_incoming_email_address(filename, limit):
+    with open(filename) as f:
+        txt_data = f.read()
+        pattern = r'From: [A-Za-z0-9.]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]{2,}'
+        matches = re.findall(pattern, txt_data)
+        emails = []
+        replace_pattern = "From: "
+        for email in matches:
+            emails.append(re.sub(replace_pattern, "", email))
+
+        print(emails[:limit])
+
+
+extract_incoming_email_address(filename='email_exchanges_big.txt', limit=4)
