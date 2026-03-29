@@ -85,3 +85,28 @@ def extract_incoming_email_address(filename, limit):
 
 
 extract_incoming_email_address(filename='email_exchanges_big.txt', limit=4)
+
+print("\nMost common words")
+def find_most_common_words(filename, limit):
+    with open(filename) as f:
+        words = f.read().split()
+
+        count_word = {}
+
+        for wrd in words:
+            if wrd.lower() in count_word:
+                count_word[wrd.lower()] += 1
+            else:
+                count_word[wrd.lower()] = 1
+
+        list_word = [(v, k) for k, v in count_word.items()]
+
+        list_word.sort(key=lambda x:x[0], reverse=True)
+
+        print(f"Speech : {filename}\n{list_word[:limit]}\n")
+
+find_most_common_words(filename='sample.txt', limit=4)
+find_most_common_words(filename='obama_speech.txt', limit=3)
+find_most_common_words(filename='michelle_obama_speech.txt', limit=3)
+find_most_common_words(filename='donald_speech.txt', limit=3)
+find_most_common_words(filename='melina_trump_speech.txt', limit=3)
