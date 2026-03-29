@@ -56,4 +56,12 @@ most_spoken_language(filename='countries_data.json', limit=4)
 print("\nMost populated countries")
 # Most populated countries
 def most_populated_country(filename, limit):
-    pass
+    with open(filename) as f:
+        countries_json = json.loads(f.read())
+
+    countries = [{'country': country["name"], 'population': country["population"]} for country in countries_json]
+    countries.sort(key=lambda x: x["population"], reverse=True)
+
+    print(countries[:limit])
+
+most_populated_country(filename='countries_data.json', limit=4)
