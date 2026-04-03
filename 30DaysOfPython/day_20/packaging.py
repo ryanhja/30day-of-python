@@ -1,15 +1,13 @@
-import numpy as np
-import webbrowser
+import requests
 
-nb_a = [4,5,6]
+print("Romeo and Juliet API")
+romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
+response_rj = requests.get(romeo_and_juliet)
 
-print(nb_a*2)
+print("Cats API")
+cats_api = 'https://api.thecatapi.com/v1/breeds'
+response_ca = requests.get(cats_api)
 
-nb_b = np.array(nb_a)
+weights = [w["weight"]["metric"] for w in response_ca.json()]
 
-print(nb_b*2)
-
-urls = ['https://www.google.com', 'https://www.facebook.com']
-
-for url in urls:
-    webbrowser.open_new_tab(url)
+print(weights)
