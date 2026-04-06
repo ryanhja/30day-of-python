@@ -1,3 +1,5 @@
+# Day 20: 30 Days of python programming
+
 import requests
 import numpy as np
 
@@ -12,9 +14,9 @@ response_ca = requests.get(cats_api)
 weights = [w["weight"]["metric"].split(" - ") for w in response_ca.json()]
 metrics = [int(weight[1]) - int(weight[0]) for weight in weights]
 
-min_metric= min(metrics)
-max_metric= max(metrics)
-median_metric= np.median(metrics)
+min_metric = min(metrics)
+max_metric = max(metrics)
+median_metric = np.median(metrics)
 
 print(min_metric)
 print(max_metric)
