@@ -1,16 +1,24 @@
 # Day 21: 30 Days of python programming
 
-class Person:
-    def __init__(self, first_name, last_name=""):
-        self.first_name = first_name
-        self.last_name = last_name
 
-    def presentation(self):
-        if len(self.last_name) == 0:
-            return f"First name: {self.first_name}"
-        return f"First name: {self.first_name}, Last name : {self.last_name}"
+class Statistics:
+    def __init__(self, data):
+        self.data = data
+
+    def count(self):
+        return len(self.data)
+
+    def sum(self):
+        sum_data = 0
+        for d in self.data:
+            sum_data += d
+
+        return sum_data
 
 
-person = Person("Rayan", )
+ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 
-print(person.presentation())
+s = Statistics(ages)
+
+print("Count: ", s.count())
+print("Sum: ", s.sum())
