@@ -24,6 +24,13 @@ class Statistics:
     def range(self):
         return max(self.data) - min(self.data)
 
+    def mean(self):
+        return round(self.sum() / len(self.data))
+
+    def median(self):
+        data = self.data
+        return data.sort(key=lambda x: x)
+
 
 ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 
@@ -34,3 +41,5 @@ print("Sum:", s.sum())
 print("Min:", s.min())
 print("Max:", s.max())
 print("Range:", s.range())
+print("Mean:", s.mean())
+print("Median:", s.median())
