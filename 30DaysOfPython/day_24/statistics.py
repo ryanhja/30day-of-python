@@ -76,12 +76,17 @@ print("\nNumpy Zeroes")
 numpy_zeros = np.zeros((3, 4), dtype=int)
 print(numpy_zeros)
 
-#Numpy Ones
+# Numpy Ones
 print("\nNumpy Ones")
-numpy_ones = np.ones((3,4), dtype=int)
+numpy_ones = np.ones((3, 4), dtype=int)
 print(numpy_ones)
 
-#Numpy Twos
+# Numpy Twos
 print("\nNumpy Twos")
-numpy_twos = numpy_ones*2
+numpy_twos = numpy_ones * 2
 print(numpy_twos)
+
+# Reshape
+print("\nReshape")
+reshape_numpy_ones = numpy_ones.reshape(4,3)
+print(reshape_numpy_ones)
