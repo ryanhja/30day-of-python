@@ -1,7 +1,8 @@
 # Day 24: 30 Days of python programming
 
 import numpy as np
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 # Python list
 numbers = [21, 2, 3, 4, 5, 6, 7, 8, 9]
 print(type(numbers), ": ", numbers)
@@ -88,5 +89,19 @@ print(numpy_twos)
 
 # Reshape
 print("\nReshape")
-reshape_numpy_ones = numpy_ones.reshape(4,3)
+reshape_numpy_ones = numpy_ones.reshape(4, 3)
 print(reshape_numpy_ones)
+
+# Numpy Random
+print("\nRandom")
+numpy_random_int = np.random.randint(5, 50, size=(5, 5))
+print(numpy_random_int)
+
+print("\n")
+numpy_random_normal = np.random.normal(79, 5, 50)
+print(numpy_random_normal)
+
+# Seaborn
+print("\nSeaborn")
+sns.set()
+plt.hist(numpy_random_normal, color="grey", bins=50)
