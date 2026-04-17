@@ -105,3 +105,10 @@ print(numpy_random_normal)
 print("\nSeaborn")
 sns.set()
 plt.hist(numpy_random_normal, color="grey", bins=50)
+
+
+four_by_four_matrix = np.matrix(np.ones((4,4), dtype=float))
+print(four_by_four_matrix)
+
+lst = range(0, 11, 2)
+print(list)
