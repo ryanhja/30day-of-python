@@ -3,6 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 # Python list
 numbers = [21, 2, 3, 4, 5, 6, 7, 8, 9]
 print(type(numbers), ": ", numbers)
@@ -106,9 +107,19 @@ print("\nSeaborn")
 sns.set()
 plt.hist(numpy_random_normal, color="grey", bins=50)
 
-
-four_by_four_matrix = np.matrix(np.ones((4,4), dtype=float))
+four_by_four_matrix = np.matrix(np.ones((4, 4), dtype=float))
 print(four_by_four_matrix)
 
-lst = range(0, 11, 2)
-print(list)
+# Arange
+print("\nNumpy arange")
+numpy_arange = np.arange(0, 101, 5)
+print(numpy_arange)
+
+# Sequence
+print("\nNumpy linespace")
+numpy_linespace = np.linspace(1, 4, 5)
+print(numpy_linespace)
+
+print("\nNumpy logspace")
+numpy_logspace = np.logspace(1, 4, 10)
+print(numpy_logspace)
