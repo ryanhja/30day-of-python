@@ -123,3 +123,18 @@ print(numpy_linespace)
 print("\nNumpy logspace")
 numpy_logspace = np.logspace(1, 4, 10)
 print(numpy_logspace)
+
+# Statistical
+print("\n Numpy Statistical")
+np_normal_dis = np.random.normal(5, 0.5, 100)
+
+print('min: ', np_normal_dis.min())
+print('max: ', np_normal_dis.max())
+print('mean: ',np_normal_dis.mean())
+print('sd: ', np_normal_dis.std())
+
+print('Column with minimum: ', np.amin(np_normal_dis,axis=0))
+print('Column with maximum: ', np.amax(np_normal_dis,axis=0))
+print('=== Row ==')
+# print('Row with minimum: ', np.amin(np_normal_dis,axis=1))
+# print('Row with maximum: ', np.amax(np_normal_dis,axis=1))
