@@ -27,7 +27,7 @@ print(df)
 # List
 print("\nDF From List")
 data = [
-    ['Asabeneh', 'Finland', 'Helsink'],
+    ['Rayan', 'Madagascar', 'Fianarantsoa'],
     ['David', 'UK', 'London'],
     ['John', 'Sweden', 'Stockholm']
 ]
@@ -42,3 +42,20 @@ print(df)
 # Exploration
 print("\nHead")
 print(df.head())
+
+print("\nTail")
+print(df.tail())
+
+print("\nShape")
+print(df.shape)
+
+print("\nColumns")
+print(df.columns)
+
+print("\nHeight")
+height = df["Height"]
+
+print(height)
+
+print("\nDescribe")
+print(df.describe)
