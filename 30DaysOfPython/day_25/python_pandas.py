@@ -60,4 +60,17 @@ print(height)
 print("\nDescribe")
 print(df.describe)
 
-print("Hello, worl")
+# Modifying
+print("\nModifying a DataFrame")
+data = [
+    {"Name": "Rayan", "Country": "Madagascar", "City": "Fianarantsoa"},
+    {"Name": "David", "Country": "UK", "City": "London"},
+    {"Name": "John", "Country": "Sweden", "City": "Stockholm"}]
+data_f = pd.DataFrame(data)
+print(data_f)
+
+weight = [45, 78, 62]
+
+data_f["Weight"] = weight
+
+print("\n",data_f)
