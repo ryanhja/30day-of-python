@@ -74,3 +74,23 @@ weight = [45, 78, 62]
 data_f["Weight"] = weight
 
 print("\n",data_f)
+
+heights = [173, 175, 169]
+data_f['Height'] = heights
+
+print("\nModifying values")
+data_f["Weight"] = data_f["Weight"] * 5
+print(data_f)
+
+
+def calculate_bmi ():
+    weights = data_f['Weight']
+    heights = data_f['Height']
+    dmi_data = []
+    for w,h in zip(weights, heights):
+        b = w/(h*h)
+        dmi_data.append(b)
+    return dmi_data
+
+data_f['BMI'] = calculate_bmi()
+print("\n",data_f)
