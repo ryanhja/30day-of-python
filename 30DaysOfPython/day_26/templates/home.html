@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-</ul>
+{% extends 'layout.html' %}
 
-<h1 style="text-align: center;">Home</h1>
+{% block content %}
+    <div>
+        <h1 style="text-align: center;">Home</h1>
 
-<ul>
-    {% for tech in techs %}
-    <li>{{ tech }}</li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+        <ul>
+            {% for tech in techs %}
+            <li>{{ tech }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-</ul>
-<h1 style="text-align: center;">About</h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <h1 style="text-align: center;">About</h1>
+
+        <p>
+            This is a 30 days of python programming challenge. If you have been coding
+                this far, you are awesome. Congratulations for the job well done!
+        </p>
+    </div>
+{% endblock %}
