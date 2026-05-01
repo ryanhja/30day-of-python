@@ -1,6 +1,6 @@
 # Day 26: 30 Days of python programming
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -14,6 +14,22 @@ def home():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/result")
+def result():
+    return render_template("result.html")
+
+
+@app.route("/post", methods=['GET', 'POST'])
+def post():
+    if request.method == 'GET':
+        return render_template("post.html")
+
+    if request.method == 'POST':
+        content = request.form['content']
+        print(content)
+        return redirect(url_for("result"))
 
 
 if __name__ == '__main__':
