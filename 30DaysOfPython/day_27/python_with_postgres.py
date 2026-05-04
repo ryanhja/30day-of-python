@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 from dotenv import load_dotenv
+import psycopg2
 
 load_dotenv()
 
@@ -16,10 +17,13 @@ db_password = getenv("DB_PASSWORD")
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
 
-@app.route("/")
-def home():
-    return "<h1>Home</h1>"
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+
+
+with app.app_context():
+    db.create_all()
