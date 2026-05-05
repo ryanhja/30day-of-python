@@ -34,7 +34,16 @@ students = [
     Student(name='Sami', country='Finland', city='Helsinki', age=25),
 ]
 
-with app.app_context():
-    db.create_all()
-    db.session.add_all(students)
-    db.session.commit()
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+
+        if not Student.query.first():
+            db.session.add_all(students)
+            db.session.commit()
+
+        students = Student.query.all()
+        for student in students:
+            print(f"{student.name} ({student.age} ans) - {student.city}, {student.country}")
+
+    app.run(host='0.0.0.0', port=3000, debug=True)
