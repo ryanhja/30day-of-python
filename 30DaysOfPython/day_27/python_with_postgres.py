@@ -20,10 +20,21 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-class User(db.Model):
+class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(50), unique=True, nullable=False)
+    country = db.Column(db.String(50))
+    city = db.Column(db.String(50))
+    age = db.Column(db.Integer)
 
+
+students = [
+    Student(name='David', country='UK', city='London', age=34),
+    Student(name='John', country='Sweden', city='Stockholm', age=28),
+    Student(name='Sami', country='Finland', city='Helsinki', age=25),
+]
 
 with app.app_context():
     db.create_all()
+    db.session.add_all(students)
+    db.session.commit()
