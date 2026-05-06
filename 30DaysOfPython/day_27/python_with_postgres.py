@@ -1,3 +1,5 @@
+# Day 27: 30 Days of python programming
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv
