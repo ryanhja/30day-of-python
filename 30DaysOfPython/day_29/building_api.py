@@ -26,6 +26,12 @@ def students():
             'country': 'Sweden',
             'city': 'Stockholm',
             'skills': ['Java', 'C#']
+        },
+        {
+            'name': 'Joe',
+            'country': 'Doe',
+            'city': 'Australia',
+            'skills': ['C', 'Rust', 'C++']
         }
     ]
     return Response(json.dumps(student_list), mimetype='application/json')
